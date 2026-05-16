@@ -30,11 +30,11 @@ pub fn router(state: AppState) -> Router {
             )),
         )
         .route(
-            "/api/messages/{message_id}/chunks/{chunk_index}",
+            "/api/messages/:message_id/chunks/:chunk_index",
             put(put_message_chunk),
         )
         .route(
-            "/api/messages/{message_id}/complete",
+            "/api/messages/:message_id/complete",
             post(complete_message),
         )
         .with_state(state)
